@@ -211,10 +211,13 @@ template <class T1>
 void BST<T1>::increment(T1 data)
 {
    Node<T1>* result = searchData(_root, data);
-    if (result != nullptr && result->getData() == data)
+    if (result->getData() == data)
     {
+        //after comfirming that there is that word, get that word and the resuult and then incirment that word by one, that how we find how many word there
+        //are in the text file
         Word word = result->getData();
         word++;
+        //then set the result to the data of the word
         result->setData(word);
     }
    
