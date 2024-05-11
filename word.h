@@ -45,7 +45,7 @@ Word::Word(string tmpWord, int tmpCounter)
 // You do not need to worry about the counter parameter since this will have its own _counter
 Word Word::operator++(int counter)
 {
-    
+    //construct a word and place this counter into it, then incriment that total counter 
     Word temp(*this);
     _counter++;       
     return temp;
