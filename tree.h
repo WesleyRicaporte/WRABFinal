@@ -196,4 +196,11 @@ void BST<T1>::insert(T1 data)
 template <class T1>
 void BST<T1>::increment(T1 data)
 {
+    Node<T1>* result = searchData(_root, data);
+    if (result->getData() == data)
+    {
+        result->setData(result->getData()++);
+        return;
+    }
+   
 }
