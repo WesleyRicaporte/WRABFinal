@@ -1,5 +1,6 @@
 #pragma once
 #include "node.h"
+#include "word.h"
 using namespace std;
 template <class T1>
 class BST
@@ -209,11 +210,12 @@ void BST<T1>::insert(T1 data)
 template <class T1>
 void BST<T1>::increment(T1 data)
 {
-    Node<T1>* result = searchData(_root, data);
-    if (result->getData() == data)
+   Node<T1>* result = searchData(_root, data);
+    if (result != nullptr && result->getData() == data)
     {
-        result->setData(result->getData()++);
-        return;
+        Word word = result->getData();
+        word++;
+        result->setData(word);
     }
    
 }
