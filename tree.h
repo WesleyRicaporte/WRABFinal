@@ -72,7 +72,7 @@ Node<T1>* BST<T1>::removeData(Node<T1>* root, T1 data)
             delete root;
             return temp;
         }
-        // now for two childern to remove and fix bst finding the smallest in the right
+        //  remove and fix bst finding the smallest in the right
         //I move to the right first then find the min val and set it to that
         Node <T1>* temp =minVal(root->getRight());
         root->setData(temp->getData());
