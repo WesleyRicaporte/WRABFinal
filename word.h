@@ -36,8 +36,8 @@ Word::Word()
 // Parameterized constructor
 Word::Word(string tmpWord, int tmpCounter)
 {
-    tmpWord = "";
-    tmpCounter = 1;
+    _word = tmpWord;
+    _counter = tmpCounter;
 
 }
 
@@ -46,9 +46,9 @@ Word::Word(string tmpWord, int tmpCounter)
 Word Word::operator++(int counter)
 {
     
-    ++counter;
-    // return Word();
-    return *this;
+    Word temp(*this); 
+    counter++;       
+    return temp;
 }
 
 // Check if two Words are equal (compare _word)
