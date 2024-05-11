@@ -46,8 +46,8 @@ Word::Word(string tmpWord, int tmpCounter)
 Word Word::operator++(int counter)
 {
     
-    Word temp(*this); 
-    counter++;       
+    Word temp(*this);
+    _counter++;       
     return temp;
 }
 
