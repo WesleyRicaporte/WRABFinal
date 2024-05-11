@@ -1,6 +1,6 @@
 #pragma once
 #include "node.h"
-
+using namespace std;
 template <class T1>
 class BST
 {
@@ -29,7 +29,20 @@ BST<T1>::~BST()
 {
     destroyTree(_root);
 }
-
+template <class T1>
+void BST<T1>::destroyTree(Node<T1>* root)
+{
+    // if there is nothing in the root then return/do nothing
+    if(root != nullptr)
+    {
+    return;
+    //Very cool recursion, if there IS something in the root then you call to delete the left side of the root and the right side of the root then deleteing the root
+    // this means that technically the leafs of the root are not there own seperate roots with leafs.
+    destroyTree(root->getRight());
+    destroyTree(root->getLeft());
+    delete _root;
+    }
+}
 // Public method that takes in some data and passes that into the removeData method. Don't forget to update _root as you may end up deleting the original root.
 template <class T1>
 void BST<T1>::remove(T1 data)
